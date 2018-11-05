@@ -32,4 +32,5 @@ class Listing < ActiveRecord::Base
       @user.save
     end
   end
+
 end
