@@ -42,5 +42,4 @@ class Listing < ActiveRecord::Base
       host.update(host: true)
     end
   end
-
 end
