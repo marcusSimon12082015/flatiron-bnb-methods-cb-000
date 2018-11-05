@@ -18,16 +18,6 @@ class Listing < ActiveRecord::Base
     reviews.average(:rating)
   end
 
-  def reviews
-    @reviews = []
-    self.reservations.each do |r|
-      if !r.review.nil?
-        @reviews << r.review
-      end
-    end
-    return @reviews
-  end
-
   private
   def change_user_to_host
     @user = User.find(self.host.id)
