@@ -33,13 +33,13 @@ class Listing < ActiveRecord::Base
 
   def unset_host_as_host
     if Listing.where(host: host).where.not(id: id).empty?
-      host.update(is_host: false)
+      host.update(host: false)
     end
   end
 
   def set_host_as_host
     unless host.is_host?
-      host.update(is_host: true)
+      host.update(host: true)
     end
   end
 
