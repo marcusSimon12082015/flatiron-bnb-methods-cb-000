@@ -15,15 +15,7 @@ class Listing < ActiveRecord::Base
   validates :neighborhood, presence: true
 
   def average_review_rating
-    @sum_rating = 0
-    @review_count = 0
-    self.reservations.each do |r|
-      if !r.review.nil?
-        pry
-        @sum_rating += r.review.rating
-        @review_count++
-      end
-    end
+    reviews.average(:rating)
   end
 
   def reviews
