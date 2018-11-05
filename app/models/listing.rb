@@ -30,7 +30,7 @@ class Listing < ActiveRecord::Base
       []
     end
   end
-  
+
   def unset_host_as_host
     if Listing.where(host: host).where.not(id: id).empty?
       host.update(is_host: false)
